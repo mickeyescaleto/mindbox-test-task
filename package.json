@@ -2,5 +2,11 @@
   "name": "mindbox-test-task",
   "version": "1.0.0",
   "type": "module",
-  "private": true
+  "private": true,
+  "scripts": {
+    "format": "prettier --write '**/*.{ts,tsx,mjs}'"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  }
 }
