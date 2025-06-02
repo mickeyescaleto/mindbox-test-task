@@ -1,8 +1,10 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
+import { View } from '@/widgets/view';
+
 createRoot(document.getElementById('application')!).render(
   <StrictMode>
-    <h1>Todoify</h1>
+    <View />
   </StrictMode>,
 );

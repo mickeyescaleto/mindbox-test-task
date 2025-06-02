@@ -1,8 +1,16 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+:root {
+  --background: oklch(26.9% 0 0);
+  --text: oklch(98.5% 0 0);
+}
 
 @theme inline {
   --font-*: initial;
-  --font-sans: "Montserrat", sans-serif;
+  --font-sans: 'Montserrat', sans-serif;
+
+  --color-background: var(--background);
+  --color-text: var(--text);
 }
 
 html {
@@ -10,4 +18,20 @@ html {
   font-size: 16px;
   font-weight: 400;
   font-style: normal;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+}
+
+#application {
+  height: 100dvh;
+  width: 100%;
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  padding-inline: calc(var(--spacing) * 4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
