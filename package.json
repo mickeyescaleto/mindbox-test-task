@@ -4,9 +4,19 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "format": "prettier --write '**/*.{ts,tsx,mjs}'"
+    "format": "prettier --write '**/*.{ts,tsx,mjs}'",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,mjs}": [
+      "prettier --write '**/*.{ts,tsx,mjs}'"
+    ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.0",
     "prettier": "^3.5.3"
   }
 }
