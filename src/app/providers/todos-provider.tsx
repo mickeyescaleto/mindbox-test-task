@@ -16,9 +16,40 @@ export function TodosProvider({ children }: { children: ReactNode }) {
     setTodos((state) => state.filter(({ status }) => status !== 'completed'));
   }
 
+  function completeTodo(id: Todo['id']) {
+    setTodos((state) =>
+      state.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, status: 'completed' };
+        }
+
+        return todo;
+      }),
+    );
+  }
+
+  function uncompleteTodo(id: Todo['id']) {
+    setTodos((state) =>
+      state.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, status: 'in_progress' };
+        }
+
+        return todo;
+      }),
+    );
+  }
+
   return (
     <TodosContext.Provider
-      value={{ todos, setTodos, createTodo, clearCompletedTodos }}
+      value={{
+        todos,
+        setTodos,
+        createTodo,
+        clearCompletedTodos,
+        completeTodo,
+        uncompleteTodo,
+      }}
     >
       {children}
     </TodosContext.Provider>
