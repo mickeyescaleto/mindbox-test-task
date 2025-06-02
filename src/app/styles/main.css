@@ -1,16 +1,29 @@
 @import 'tailwindcss';
 
 :root {
+  --radius: 0.75rem;
   --background: oklch(26.9% 0 0);
   --text: oklch(98.5% 0 0);
+  --surface: oklch(14.5% 0 0);
+  --overlay: oklch(1 0 0 / 0.075);
+  --accent: oklch(1 0 0 / 0.05);
 }
 
 @theme inline {
   --font-*: initial;
   --font-sans: 'Montserrat', sans-serif;
 
+  --radius-*: initial;
+  --radius-xs: calc(var(--radius) - 0.25rem);
+  --radius-sm: calc(var(--radius) - 0.125rem);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 0.125rem);
+
   --color-background: var(--background);
   --color-text: var(--text);
+  --color-surface: var(--surface);
+  --color-overlay: var(--overlay);
+  --color-accent: var(--accent);
 }
 
 html {
