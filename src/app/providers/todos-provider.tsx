@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 import { nanoid } from 'nanoid';
 
 import { TodosContext, type Todo } from '@/entities/todo';
@@ -12,12 +12,14 @@ export function TodosProvider({ children }: { children: ReactNode }) {
     setTodos((state) => [...state, { id, title, status: 'in_progress' }]);
   }
 
-  useEffect(() => {
-    console.log(todos);
-  }, [todos]);
+  function clearCompletedTodos() {
+    setTodos((state) => state.filter(({ status }) => status !== 'completed'));
+  }
 
   return (
-    <TodosContext.Provider value={{ todos, setTodos, createTodo }}>
+    <TodosContext.Provider
+      value={{ todos, setTodos, createTodo, clearCompletedTodos }}
+    >
       {children}
     </TodosContext.Provider>
   );

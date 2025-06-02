@@ -6,6 +6,7 @@ type TodosContextType = {
   todos: Todo[];
   setTodos: Dispatch<SetStateAction<Todo[]>>;
   createTodo: (title: Todo['title']) => void;
+  clearCompletedTodos: () => void;
 };
 
 export const TodosContext = createContext<TodosContextType | undefined>(
