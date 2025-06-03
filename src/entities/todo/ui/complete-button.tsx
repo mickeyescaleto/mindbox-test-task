@@ -18,7 +18,7 @@ export function CompleteButton({ id }: CompleteButtonProps) {
       type="button"
       variant="outline"
       size="small"
-      className="hover:text-text h-6 border-green-800 text-xs font-medium text-green-800 hover:bg-green-800"
+      className="h-6 border-green-800 text-xs font-medium text-green-800 hover:bg-green-800 hover:text-white"
       onClick={handleCompleteTodo}
     >
       Complete
