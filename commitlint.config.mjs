@@ -5,7 +5,7 @@ const config = {
     'type-enum': [
       2,
       'always',
-      ['init', 'docs', 'chore', 'feat', 'fix', 'refactor', 'style'],
+      ['init', 'docs', 'chore', 'feat', 'fix', 'refactor', 'style', 'test'],
     ],
   },
 };
